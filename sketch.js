@@ -7,18 +7,25 @@ function preload() {
 }
 
 function setup() {
-  pixelDensity(5);
+  pixelDensity(3);
 
   createCanvas(windowWidth, windowHeight);
   amp = new p5.Amplitude();
+  angleMode(DEGREES);
+
 
 }
 
 function draw() {
   background(238,238,238, 10);
   let vol = amp.getLevel();
-  ellipse(height/2, width/2, vol*volumeAmp, vol*volumeAmp);
-  console.log(height)
+  //ellipse(windowWidth/2, windowHeight/2, vol*volumeAmp, vol*volumeAmp);
+  noFill();
+  arc(width/2, windowHeight/2, vol*volumeAmp, vol*volumeAmp, vol*4500, 270);
+  arc(width/2, windowHeight/2, vol*volumeAmp, vol*volumeAmp, vol*4500, -170);
+rotate(vol*5);
+strokeWeight(random(1,2));
+
 
 
 
