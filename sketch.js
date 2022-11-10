@@ -4,6 +4,7 @@ function setup() {
 
 function draw() {
   background(0);
+  fill(mouseX,mouseY, 50);
   circle(mouseX,mouseY, 50);
 }
 
