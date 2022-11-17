@@ -7,7 +7,7 @@ function preload() {
 }
 
 function setup() {
-  pixelDensity(5);
+  pixelDensity();
   background(238,238,238);
 
   createCanvas(windowWidth, windowHeight);
