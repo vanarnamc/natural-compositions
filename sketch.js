@@ -7,7 +7,8 @@ function preload() {
 }
 
 function setup() {
-  pixelDensity();
+  pixelDensity(5);
+  background(238,238,238);
 
   createCanvas(windowWidth, windowHeight);
   amp = new p5.Amplitude();
@@ -17,7 +18,8 @@ function setup() {
 }
 
 function draw() {
-  background(238,238,238, 2);
+  fill(238,238,238, 2);
+  rect(0,0, width, height);
   let vol = amp.getLevel();
   //ellipse(windowWidth/2, windowHeight/2, vol*volumeAmp, vol*volumeAmp);
   noFill();
