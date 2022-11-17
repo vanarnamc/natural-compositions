@@ -18,7 +18,7 @@ function setup() {
 }
 
 function draw() {
-  background(238,238,238, 40);
+  background(238,238,238, 10);
   let vol = amp.getLevel();
   //ellipse(windowWidth/2, windowHeight/2, vol*volumeAmp, vol*volumeAmp);
   noFill();
