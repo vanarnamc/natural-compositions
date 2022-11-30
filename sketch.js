@@ -22,7 +22,7 @@ function preload() {
 
 function setup() {
   pixelDensity();
-  background(238,238,238);
+  background(112);
   createCanvas(windowWidth, windowHeight);
   amp = new p5.Amplitude();
   amp.smooth(5);
@@ -38,7 +38,7 @@ function draw() {
   if (ready){ //happens after mousepressed
   angleMode(DEGREES);
   translate(width/2,height/2);
-  background(238,238,238, 10);
+  background(112, 112, 112, 10);
   let vol = amp.getLevel();
   let l1= vol*4500;
   let size= vol*volumeAmp*arcHeight;
@@ -46,7 +46,9 @@ function draw() {
   //ellipse(windowWidth/2, windowHeight/2, vol*volumeAmp, vol*volumeAmp);
   noFill();
   arc(0, 0, sizeHeight, sizeHeight, l1, l1+900);
-  stroke(0);
+  if(vol>.01){
+  stroke(random(0,255));
+  }
   rotate(frameCount*vol);
   arc(0, 0, sizeHeight, sizeHeight, vol*4500, vol*3500);
   rotate(vol*300);
@@ -55,7 +57,7 @@ function draw() {
   strokeWeight(random(.01,1.5));
   }
   else{ //TEXT DISPLAY
-    background(238);
+    background(112);
     translate(width/2,height/2);
     rotate(radians(millis()*rotateSpeed));
     textDisplay(1);
