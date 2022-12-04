@@ -1,7 +1,7 @@
 let song, amp;
 let shape;
 let volumeAmp= 1800;
-let arcHeight=2.2;
+let arcHeight=8.2;
 
 //text
 let ready= false;
@@ -22,23 +22,27 @@ function preload() {
 
 function setup() {
   pixelDensity();
-  background(112);
+  //background(255);
   createCanvas(windowWidth, windowHeight);
   amp = new p5.Amplitude();
+
   amp.smooth(5);
  
-
+  song.setVolume(.3)
   radius = min(width,height) / 3;
   textSize(radius*.15);
   textAlign(CENTER, BASELINE);
+  background(112);
 }
 
 function draw() {
-
+  cursor(HAND);
   if (ready){ //happens after mousepressed
+  cursor(ARROW);
   angleMode(DEGREES);
   translate(width/2,height/2);
-  background(112, 112, 112, 10);
+  //background(112, 112, 112, 10);
+  background(192,192,192,5);
   let vol = amp.getLevel();
   let l1= vol*4500;
   let size= vol*volumeAmp*arcHeight;
@@ -57,7 +61,7 @@ function draw() {
   strokeWeight(random(.01,1.5));
   }
   else{ //TEXT DISPLAY
-    background(112);
+    background(192);
     translate(width/2,height/2);
     rotate(radians(millis()*rotateSpeed));
     textDisplay(1);
@@ -101,7 +105,7 @@ function mousePressed() {
     // initializeAudio();
     ready = true;
     song.loop();
-    background(238);
+    background(192);
 
 
   }
